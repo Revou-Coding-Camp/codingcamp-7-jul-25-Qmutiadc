@@ -1,3 +1,22 @@
-body{
-    background-color: aqua;
+/* Custom styles to complement Tailwind */
+.filter-btn {
+    transition: all 0.3s ease;
+}
+
+.filter-btn.active {
+    font-weight: bold;
+}
+
+.task-item {
+    transition: all 0.2s ease;
+}
+
+.task-item:hover {
+    background-color: #cfcbc9;
+}
+
+/* Checkbox styling */
+.task-checkbox:checked + .task-text {
+    text-decoration: line-through;
+    color: #9ca3af;
 }

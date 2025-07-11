@@ -2,24 +2,78 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=header, initial-scale=1.0">
-    <title>Todo - Mutiadc</title>
-
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>To-Do List App</title>
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
     <!-- CSS External -->
-     <link rel="stylesheet" href="css\style.css">
+    <link rel="stylesheet" href="css/style.css">
 </head>
-<body>
-    <!-- Hero Wesite -->
-    <header>
-        <h1>Todo List</h1>
-    </header>
+<body class="bg-orange-200 min-h-screen">
+    <div class="container mx-auto px-4 py-8 max-w-md">
+        <!-- Header -->
+        <header class="text-center mb-8">
+            <h1 class="text-3xl font-bold text-orange-500/70">To-Do List</h1>
+            <p class="text-gray-600 mt-2">Organize your tasks easily</p>
+        </header>
 
-    <main>
+        <!-- Main Content -->
+        <main class="bg-orange-400/55 rounded-lg shadow-md p-6">
+            <!-- Input Form -->
+            <form id="todo-form" class="mb-6">
+                <div class="flex gap-2 mb-3">
+                    <input 
+                        type="text" 
+                        id="task-input"
+                        class="flex-1 border border-orange-400 rounded px-3 py-2 focus:outline-orange-300"
+                        placeholder="What needs to be done?"
+                        required>
+                    <input 
+                        type="date" 
+                        id="date-input"
+                        class="border border-orange-400 rounded px-3 py-2 focus:outline-orange-300">
+                </div>
+                <button 
+                    type="submit"
+                    class="w-full bg-green-500/70 hover:bg-green-600 text-white py-2 rounded transition">
+                    Add Task
+                </button>
+            </form>
 
-    </main>
+            <!-- Filter Buttons -->
+            <div class="flex justify-between mb-6">
+                <div class="flex gap-2">
+                    <button id="show-all" class="filter-btn active bg-blue-400/75 text-white px-3 py-1 rounded">
+                        All Tasks
+                    </button>
+                    <button id="show-completed" class="filter-btn bg-gray-300 px-3 py-1 rounded">
+                        Completed
+                    </button>
+                </div>
+                <button 
+                    id="delete-all"
+                    class="bg-red-500/75 hover:bg-red-600 text-white px-3 py-1 rounded transition">
+                    Delete All
+                </button>
+            </div>
 
-    <footer>
-        <span>© 2025 Mutiadc. All rights reserved. </span>
-    </footer>
+            <!-- Task List -->
+            <section>
+                <h2 class="text-xl font-semibold mb-3">Your Tasks</h2>
+                <ul id="task-list" class="space-y-2">
+                    <!-- Tasks will be added here dynamically -->
+                    <li class="text-center text-gray-500 py-4">No tasks yet. Add one above!</li>
+                </ul>
+            </section>
+        </main>
+
+        <!-- Footer -->
+        <footer class="mt-8 text-center text-gray-500 text-sm">
+            © 2025 Mutiadc. All rights reserved.
+        </footer>
+    </div>
+
+    <!-- JavaScript -->
+    <script src="js/script.js"></script>
 </body>
 </html>
